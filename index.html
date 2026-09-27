@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PRAVĀHA-TWIN | Digital Power Distribution Twin</title>
+
+    <meta
+        name="description"
+        content="PRAVĀHA-TWIN - Simulation-Based Digital Twin for Intelligent and Resilient Power Distribution"
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-mark">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            <div>
+                <div class="brand-name">PRAVĀHA<span>-TWIN</span></div>
+                <div class="brand-sub">DIGITAL POWER TWIN</div>
+            </div>
+        </div>
+
+        <div class="institution">
+            <div class="institution-label">DEVELOPED BY</div>
+
+            <div class="institution-name">
+                Amrita Vishwa Vidyapeetham
+            </div>
+
+            <div class="institution-campus">
+                Electrical & Electronics Engineering
+            </div>
+
+            <div class="team-name">
+                TEAM NAME
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <button class="nav-item active" data-section="overview">
+                <span class="nav-icon">◉</span>
+                <span>Digital Twin</span>
+            </button>
+
+            <button class="nav-item" data-section="forecast">
+                <span class="nav-icon">⌁</span>
+                <span>Load Forecast</span>
+            </button>
+
+            <button class="nav-item" data-section="microgrid">
+                <span class="nav-icon">◇</span>
+                <span>Microgrid</span>
+            </button>
+
+            <button class="nav-item" data-section="resilience">
+                <span class="nav-icon">△</span>
+                <span>Fault & Resilience</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="engine-status">
+                <div class="status-dot"></div>
+
+                <div>
+                    <div class="engine-title">
+                        SIMULATION ENGINE
+                    </div>
+
+                    <div class="engine-value">
+                        VeraGrid Validated
+                    </div>
+                </div>
+            </div>
+
+            <div class="version">
+                PRAVĀHA-TWIN v1.0
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+    <main class="main">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+                <div class="eyebrow">
+                    DISTRIBUTION NETWORK INTELLIGENCE
+                </div>
+
+                <h1 id="pageTitle">
+                    Digital Twin
+                </h1>
+            </div>
+
+            <div class="topbar-right">
+
+                <div class="simulation-badge">
+                    <span class="pulse"></span>
+                    SIMULATION MODE
+                </div>
+
+                <div class="date-box" id="currentTime">
+                    --:--
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             OVERVIEW
+        ========================== -->
+        <section class="page-section active" id="overview">
+
+            <div class="hero">
+
+                <div class="hero-copy">
+
+                    <div class="hero-tag">
+                        PREDICT • PROTECT • POWER
+                    </div>
+
+                    <h2>
+                        Intelligent & Resilient
+                        <span>Power Distribution</span>
+                    </h2>
+
+                    <p>
+                        A simulation-based Digital Twin that monitors
+                        distribution-network behaviour, forecasts demand,
+                        integrates distributed energy resources and
+                        evaluates fault-resilience strategies.
+                    </p>
+
+                    <div class="hero-meta">
+
+                        <div>
+                            <span class="meta-label">NETWORK</span>
+                            <strong>11 kV Distribution Feeder</strong>
+                        </div>
+
+                        <div>
+                            <span class="meta-label">ENGINE</span>
+                            <strong>VeraGrid</strong>
+                        </div>
+
+                        <div>
+                            <span class="meta-label">STATUS</span>
+                            <strong class="green-text">
+                                VALIDATED
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="hero-visual">
+
+                    <div class="energy-orbit orbit-one"></div>
+                    <div class="energy-orbit orbit-two"></div>
+
+                    <div class="hero-core">
+                        <div class="core-symbol">⚡</div>
+                        <div class="core-title">PRAVĀHA</div>
+                        <div class="core-sub">DIGITAL TWIN</div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- METRICS -->
+            <div class="metric-grid">
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span>GRID SUPPLY</span>
+                        <span class="metric-icon">↯</span>
+                    </div>
+
+                    <div class="metric-value" id="gridSupply">
+                        2.30
+                    </div>
+
+                    <div class="metric-unit">
+                        MW
+                    </div>
+
+                    <div class="metric-foot">
+                        Utility import
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span>TOTAL LOAD</span>
+                        <span class="metric-icon">⌁</span>
+                    </div>
+
+                    <div class="metric-value" id="totalLoad">
+                        2.80
+                    </div>
+
+                    <div class="metric-unit">
+                        MW
+                    </div>
+
+                    <div class="metric-foot">
+                        Active network demand
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span>PV OUTPUT</span>
+                        <span class="metric-icon">☼</span>
+                    </div>
+
+                    <div class="metric-value" id="pvOutput">
+                        0.50
+                    </div>
+
+                    <div class="metric-unit">
+                        MW
+                    </div>
+
+                    <div class="metric-foot">
+                        Distributed generation
+                    </div>
+
+                </div>
+
+
+                <div class="metric-card">
+
+                    <div class="metric-top">
+                        <span>BATTERY</span>
+                        <span class="metric-icon">▰</span>
+                    </div>
+
+                    <div class="metric-value" id="batteryOutput">
+                        0.00
+                    </div>
+
+                    <div class="metric-unit">
+                        MW
+                    </div>
+
+                    <div class="metric-foot">
+                        Current support
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- NETWORK PANEL -->
+            <div class="section-heading">
+
+                <div>
+                    <div class="section-kicker">
+                        NETWORK TOPOLOGY
+                    </div>
+
+                    <h3>
+                        Live Digital Twin View
+                    </h3>
+                </div>
+
+                <div class="network-state">
+                    <span class="state-dot"></span>
+                    NETWORK STABLE
+                </div>
+
+            </div>
+
+
+            <div class="network-card">
+
+                <div class="network-toolbar">
+
+                    <div>
+                        <strong>11 kV DISTRIBUTION FEEDER</strong>
+                        <span>
+                            Simulation topology
+                        </span>
+                    </div>
+
+                    <button class="scenario-mini" id="resetNetwork">
+                        RESET
+                    </button>
+
+                </div>
+
+
+                <div class="network-diagram">
+
+                    <!-- Utility -->
+                    <div class="network-node utility">
+
+                        <div class="node-icon">⚡</div>
+
+                        <div class="node-name">
+                            UTILITY GRID
+                        </div>
+
+                        <div class="node-value">
+                            <span id="utilityVoltage">11.000</span> kV
+                        </div>
+
+                    </div>
+
+
+                    <div class="line horizontal">
+                        <span></span>
+                    </div>
+
+
+                    <!-- Bus -->
+                    <div class="network-node bus">
+
+                        <div class="node-icon">●</div>
+
+                        <div class="node-name">
+                            BUS 1
+                        </div>
+
+                        <div class="node-value">
+                            <span id="busVoltage">10.979</span> kV
+                        </div>
+
+                    </div>
+
+
+                    <div class="line horizontal">
+                        <span></span>
+                    </div>
+
+
+                    <!-- Industrial -->
+                    <div class="network-node industrial">
+
+                        <div class="node-icon">▦</div>
+
+                        <div class="node-name">
+                            INDUSTRIAL
+                        </div>
+
+                        <div class="node-value">
+                            <span id="industrialVoltage">10.956</span> kV
+                        </div>
+
+                    </div>
+
+
+                    <div class="line horizontal">
+                        <span></span>
+                    </div>
+
+
+                    <!-- Critical -->
+                    <div class="network-node critical">
+
+                        <div class="node-icon">✦</div>
+
+                        <div class="node-name">
+                            CRITICAL LOAD
+                        </div>
+
+                        <div class="node-value">
+                            <span id="criticalVoltage">10.952</span> kV
+                        </div>
+
+                    </div>
+
+
+                    <div class="line horizontal">
+                        <span></span>
+                    </div>
+
+
+                    <!-- Microgrid -->
+                    <div class="network-node microgrid">
+
+                        <div class="node-icon">◇</div>
+
+                        <div class="node-name">
+                            MICROGRID
+                        </div>
+
+                        <div class="node-value">
+                            <span id="microgridVoltage">10.953</span> kV
+                        </div>
+
+                    </div>
+
+
+                    <!-- Residential branch -->
+                    <div class="branch residential-branch">
+
+                        <div class="branch-line"></div>
+
+                        <div class="branch-node">
+
+                            <div class="node-icon">⌂</div>
+
+                            <div class="node-name">
+                                RESIDENTIAL
+                            </div>
+
+                            <div class="node-value">
+                                10.979 kV
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DER branch -->
+                    <div class="der-panel">
+
+                        <div class="der-title">
+                            DISTRIBUTED ENERGY
+                        </div>
+
+                        <div class="der-items">
+
+                            <div class="der-item pv">
+                                <span class="der-icon">☼</span>
+
+                                <div>
+                                    <strong>PV</strong>
+                                    <small>0.50 MW</small>
+                                </div>
+                            </div>
+
+                            <div class="der-item battery">
+                                <span class="der-icon">▰</span>
+
+                                <div>
+                                    <strong>BATTERY</strong>
+                                    <small id="diagramBattery">
+                                        0.00 MW
+                                    </small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTROLS -->
+            <div class="control-grid">
+
+                <div class="control-card">
+
+                    <div class="control-header">
+
+                        <div>
+                            <div class="section-kicker">
+                                SCENARIO CONTROL
+                            </div>
+
+                            <h3>
+                                Industrial Load
+                            </h3>
+                        </div>
+
+                        <div class="control-value">
+                            <span id="industrialLoadValue">
+                                1.50
+                            </span>
+                            MW
+                        </div>
+
+                    </div>
+
+                    <input
+                        type="range"
+                        id="industrialSlider"
+                        min="1.0"
+                        max="2.5"
+                        step="0.1"
+                        value="1.5"
+                    >
+
+                    <div class="range-labels">
+                        <span>1.0 MW</span>
+                        <span>2.5 MW</span>
+                    </div>
+
+                    <button
+                        class="primary-button"
+                        id="runSimulation"
+                    >
+                        <span>RUN SIMULATION</span>
+                        <span>→</span>
+                    </button>
+
+                    <div class="simulation-note" id="simulationNote">
+                        Scenario interpolation mode
+                    </div>
+
+                </div>
+
+
+                <div class="decision-card">
+
+                    <div class="section-kicker">
+                        DIGITAL TWIN INSIGHT
+                    </div>
+
+                    <div class="decision-title" id="decisionTitle">
+                        Network operating normally
+                    </div>
+
+                    <p id="decisionText">
+                        Current demand is within the validated operating
+                        scenario. Downstream voltage remains within the
+                        simulated range.
+                    </p>
+
+                    <div class="decision-indicator">
+                        <span></span>
+                        <strong id="decisionStatus">
+                            STABLE
+                        </strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FORECAST
+        ========================== -->
+        <section class="page-section" id="forecast">
+
+            <div class="section-intro">
+
+                <div>
+                    <div class="section-kicker">
+                        PREDICTIVE ANALYTICS
+                    </div>
+
+                    <h2>
+                        Load Forecast
+                    </h2>
+
+                    <p>
+                        Forecasted distribution demand profile used to
+                        anticipate network stress and support operational
+                        decisions.
+                    </p>
+                </div>
+
+                <div class="peak-card">
+
+                    <span>FORECAST PEAK</span>
+
+                    <strong>
+                        3.80 MW
+                    </strong>
+
+                    <small>
+                        07:00
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="forecast-layout">
+
+                <div class="chart-card">
+
+                    <div class="chart-header">
+
+                        <div>
+                            <strong>
+                                8-STEP DEMAND FORECAST
+                            </strong>
+
+                            <span>
+                                Simulation dataset
+                            </span>
+                        </div>
+
+                        <div class="chart-legend">
+                            <span></span>
+                            Forecast demand
+                        </div>
+
+                    </div>
+
+                    <div class="chart-area">
+
+                        <div class="y-axis">
+                            <span>4.0</span>
+                            <span>3.5</span>
+                            <span>3.0</span>
+                            <span>2.5</span>
+                            <span>2.0</span>
+                        </div>
+
+                        <div class="bars" id="forecastBars">
+
+                            <!-- Generated by JavaScript -->
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="forecast-side">
+
+                    <div class="insight-card">
+
+                        <div class="insight-number">
+                            +50%
+                        </div>
+
+                        <div class="insight-label">
+                            Demand increase
+                        </div>
+
+                        <p>
+                            Forecast rises from 2.53 MW at midnight
+                            to 3.80 MW at 07:00.
+                        </p>
+
+                    </div>
+
+
+                    <div class="insight-card">
+
+                        <div class="insight-number">
+                            07:00
+                        </div>
+
+                        <div class="insight-label">
+                            Peak period
+                        </div>
+
+                        <p>
+                            The forecast can be used to anticipate
+                            feeder loading and voltage stress.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MICROGRID
+        ========================== -->
+        <section class="page-section" id="microgrid">
+
+            <div class="section-intro">
+
+                <div>
+                    <div class="section-kicker">
+                        DISTRIBUTED ENERGY RESOURCES
+                    </div>
+
+                    <h2>
+                        Microgrid Operations
+                    </h2>
+
+                    <p>
+                        PV and battery storage support local demand
+                        and reduce dependency on upstream grid supply.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="microgrid-grid">
+
+                <div class="resource-card solar-card">
+
+                    <div class="resource-symbol">
+                        ☼
+                    </div>
+
+                    <div class="resource-name">
+                        SOLAR PV
+                    </div>
+
+                    <div class="resource-value">
+                        0.50
+                        <small>MW</small>
+                    </div>
+
+                    <div class="resource-status">
+                        GENERATING
+                    </div>
+
+                </div>
+
+
+                <div class="resource-card battery-card">
+
+                    <div class="resource-symbol">
+                        ▰
+                    </div>
+
+                    <div class="resource-name">
+                        BATTERY STORAGE
+                    </div>
+
+                    <div class="resource-value" id="microBattery">
+                        0.00
+                        <small>MW</small>
+                    </div>
+
+                    <div class="resource-status">
+                        STANDBY
+                    </div>
+
+                    <button
+                        class="secondary-button"
+                        id="batteryButton"
+                    >
+                        ENABLE SUPPORT
+                    </button>
+
+                </div>
+
+
+                <div class="resource-card critical-card">
+
+                    <div class="resource-symbol">
+                        ✦
+                    </div>
+
+                    <div class="resource-name">
+                        CRITICAL LOAD
+                    </div>
+
+                    <div class="resource-value">
+                        0.80
+                        <small>MW</small>
+                    </div>
+
+                    <div class="resource-status">
+                        PRIORITY LOAD
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="power-balance">
+
+                <div class="balance-title">
+                    POWER BALANCE
+                </div>
+
+                <div class="balance-equation">
+
+                    <div>
+                        <span>GRID</span>
+                        <strong id="balanceGrid">2.30</strong>
+                        <small>MW</small>
+                    </div>
+
+                    <div class="operator">+</div>
+
+                    <div>
+                        <span>PV</span>
+                        <strong>0.50</strong>
+                        <small>MW</small>
+                    </div>
+
+                    <div class="operator">+</div>
+
+                    <div>
+                        <span>BATTERY</span>
+                        <strong id="balanceBattery">0.00</strong>
+                        <small>MW</small>
+                    </div>
+
+                    <div class="operator">≈</div>
+
+                    <div>
+                        <span>LOAD</span>
+                        <strong id="balanceLoad">2.80</strong>
+                        <small>MW</small>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RESILIENCE
+        ========================== -->
+        <section class="page-section" id="resilience">
+
+            <div class="section-intro">
+
+                <div>
+                    <div class="section-kicker">
+                        FAULT DETECTION & RESILIENCE
+                    </div>
+
+                    <h2>
+                        Network Resilience
+                    </h2>
+
+                    <p>
+                        Controlled fault scenarios demonstrate how the
+                        Digital Twin identifies abnormal network states
+                        and evaluates critical-load support.
+                    </p>
+                </div>
+
+                <div class="simulation-badge">
+                    CONTROLLED SCENARIO
+                </div>
+
+            </div>
+
+
+            <div class="resilience-layout">
+
+                <div class="fault-console">
+
+                    <div class="console-header">
+                        <div>
+                            <strong>
+                                FAULT SIMULATION CONSOLE
+                            </strong>
+
+                            <span>
+                                Non-live protection simulation
+                            </span>
+                        </div>
+
+                        <div class="console-status" id="faultStatus">
+                            NORMAL
+                        </div>
+                    </div>
+
+
+                    <div class="fault-network">
+
+                        <div class="fault-node">
+                            <span>UTILITY</span>
+                            <b>✓</b>
+                        </div>
+
+                        <div class="fault-line"></div>
+
+                        <div class="fault-node">
+                            <span>FEEDER</span>
+                            <b id="feederStatus">✓</b>
+                        </div>
+
+                        <div class="fault-line"></div>
+
+                        <div class="fault-node critical-fault-node">
+                            <span>CRITICAL</span>
+                            <b id="criticalStatus">✓</b>
+                        </div>
+
+                        <div class="fault-line"></div>
+
+                        <div class="fault-node">
+                            <span>MICROGRID</span>
+                            <b id="microStatus">✓</b>
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="fault-button"
+                        id="faultButton"
+                    >
+                        INJECT CONTROLLED FAULT
+                    </button>
+
+                    <button
+                        class="restore-button"
+                        id="restoreButton"
+                    >
+                        RESTORE NETWORK
+                    </button>
+
+                </div>
+
+
+                <div class="resilience-timeline">
+
+                    <div class="timeline-title">
+                        RESILIENCE RESPONSE
+                    </div>
+
+                    <div class="timeline">
+
+                        <div class="timeline-step active">
+                            <span>01</span>
+
+                            <div>
+                                <strong>
+                                    Normal Operation
+                                </strong>
+
+                                <small>
+                                    Network operating within simulated limits
+                                </small>
+                            </div>
+                        </div>
+
+
+                        <div class="timeline-step" id="stepDetect">
+                            <span>02</span>
+
+                            <div>
+                                <strong>
+                                    Fault Detection
+                                </strong>
+
+                                <small>
+                                    Abnormal network state identified
+                                </small>
+                            </div>
+                        </div>
+
+
+                        <div class="timeline-step" id="stepIsolate">
+                            <span>03</span>
+
+                            <div>
+                                <strong>
+                                    Isolation
+                                </strong>
+
+                                <small>
+                                    Affected section separated in scenario
+                                </small>
+                            </div>
+                        </div>
+
+
+                        <div class="timeline-step" id="stepSupport">
+                            <span>04</span>
+
+                            <div>
+                                <strong>
+                                    Critical Load Support
+                                </strong>
+
+                                <small>
+                                    Microgrid resources support priority load
+                                </small>
+                            </div>
+                        </div>
+
+
+                        <div class="timeline-step" id="stepRestore">
+                            <span>05</span>
+
+                            <div>
+                                <strong>
+                                    Restoration
+                                </strong>
+
+                                <small>
+                                    Network returns to normal scenario
+                                </small>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="resilience-note">
+
+                <div class="note-icon">
+                    !
+                </div>
+
+                <div>
+                    <strong>
+                        Simulation boundary
+                    </strong>
+
+                    <p>
+                        Fault and restoration behaviour shown here is a
+                        controlled simulation scenario. It does not represent
+                        live utility protection or operational control.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer>
+
+            <div>
+                <strong>PRAVĀHA-TWIN</strong>
+                <span>
+                    Simulation-Based Digital Twin for Intelligent & Resilient Power Distribution
+                </span>
+            </div>
+
+            <div>
+                Amrita Vishwa Vidyapeetham • EEE
+            </div>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="app.js"></script>
+
+</body>
+</html>
